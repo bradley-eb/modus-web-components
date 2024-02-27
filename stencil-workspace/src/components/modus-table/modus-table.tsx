@@ -112,6 +112,9 @@ export class ModusTable {
 
   /** (optional) The density of the table. */
   @Prop() density: 'relaxed' | 'comfortable' | 'compact' = 'relaxed';
+  @Watch('density') onDensityChange() {
+    this.setTableState({ rowSelection: this.getPreselectedRowState() });
+  }
 
   /** (Optional) To control display options of table. */
   @Prop() displayOptions?: ModusTableDisplayOptions = {
@@ -483,6 +486,7 @@ export class ModusTable {
       onColumnResizeChange: this.onColumnResizeChange,
       onColumnReorderChange: this.onColumnReorderChange,
       onDataChange: this.onDataChange,
+      onDensityChange: this.onDensityChange,
       onRowsExpandableChange: this.onRowsExpandableChange,
       onRowSelectionOptionsChange: this.onRowSelectionOptionsChange,
       onSortChange: this.onSortChange,

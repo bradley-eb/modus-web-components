@@ -108,6 +108,7 @@ export interface TableContext {
   onColumnResizeChange: (newVal: boolean) => void;
   onColumnReorderChange: () => void;
   onDataChange: (newVal: unknown[]) => void;
+  onDensityChange: () => void;
   onRowsExpandableChange: (newVal: boolean) => void;
   onRowSelectionOptionsChange: (newVal: ModusTableRowSelectionOptions, oldVal: ModusTableRowSelectionOptions) => void;
   onSortChange: (newVal) => void;
